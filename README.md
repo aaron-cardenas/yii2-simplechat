@@ -1,5 +1,5 @@
 #Yii2 Simple Chat
-A simple chat for your yii2 application
+A simple chat for mi app
 
 ##Installation
 
