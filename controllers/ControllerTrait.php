@@ -88,7 +88,7 @@ trait ControllerTrait
     {
         $userId = $this->user->getId();
         if ($userId == $contactId) {
-            throw new ForbiddenHttpException('You cannot send a message in this conversation');
+            throw new ForbiddenHttpException('No puedes enviar mensajes a este contacto.');
         }
         $text = \Yii::$app->request->post('text');
         /** @var $messageClass Message */
