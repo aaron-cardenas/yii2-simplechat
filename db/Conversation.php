@@ -42,8 +42,9 @@ class Conversation extends ActiveRecord
      */
     public function getNewMessages()
     {
-        return $this->hasMany(Message::className(), ['sender_id' => 'contact_id', 'receiver_id' => 'user_id'])
-            ->andOnCondition(['is_new' => true]);
+        return $this->hasMany(Message::className(), ['sender_id' => 'contact_id'])
+           ->andOnCondition(['receiver_id' => \Yii::$app->user->identity->id])  
+           ->andOnCondition(['is_new' => true]);
     }
 
     /**
